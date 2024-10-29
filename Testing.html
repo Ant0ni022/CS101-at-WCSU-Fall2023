@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Feet to Inches Converter</title>
+    <script>
+        function convertFeetToInches() {
+            var feetValue = parseFloat(document.getElementById('feetInput').value);
+            if (!isNaN(feetValue)) {
+                var inchesValue = feetValue * 12;
+                document.getElementById('result').innerHTML = feetValue + ' feet is equal to ' + inchesValue + ' inches.';
+            } else {
+                document.getElementById('result').innerHTML = 'Please enter a valid number for feet.';
+            }
+        }
+    </script>
+</head>
+<body>
+    <h2>Feet to Inches Converter</h2>
+    <form>
+        <label for="feetInput">Enter the number of feet:</label>
+        <input type="text" id="feetInput" name="feetInput" placeholder="Enter feet">
+        <br>
+        <button type="button" onclick="convertFeetToInches()">Calculate</button>
+    </form>
+    <p id="result"></p>
+</body>
+</html>

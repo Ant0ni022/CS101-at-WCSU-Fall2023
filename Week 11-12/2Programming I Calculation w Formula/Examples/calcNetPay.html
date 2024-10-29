@@ -1,0 +1,93 @@
+<html>
+
+<head>
+<title>Pay Calculator</title>
+
+<script language="JavaScript">
+
+function calcGross(hours,rate){
+	var result = hours * rate;
+	return result;
+}
+
+function calcTax(gross,percent){
+	var result = gross * percent / 100;
+	return result;
+}
+
+function calcNet(gross,tax,insurance){
+	result = gross - tax -insurance;
+	return result;
+}
+
+function roundy(num){
+	var newNum = Math.round(num * 100) / 100;
+	return newNum;
+}
+
+function doCalc(){
+	var hours = eval(myform.hours.value);
+	var rate = eval(myform.rate.value);
+	var percent = eval(myform.percent.value);
+        var insurance = eval(myform.insurance.value);
+	var gross = calcGross(hours,rate);
+	gross = roundy(gross);
+	var tax = calcTax(gross,percent);
+	tax = roundy(tax);
+	var net = calcNet(gross,tax, insurance);
+	net = roundy(net);
+	myform.gross.value = gross;
+	myform.tax.value = tax;
+	myform.net.value = net;
+}
+
+</script>
+
+</head>
+
+<body>
+<h1>Pay Calculator</h1>
+<form name="myForm">
+  <table>
+    <tr>
+      <td>Hours</td>
+      <td><input type="text" name="hours" size="20"></td>
+    </tr>
+    <tr>
+      <td>Rate</td>
+      <td><input type="text" name="rate" size="20></td>
+    </tr>
+    <tr>
+      <td>Tax Percent </td>
+      <td><input type="text" name="percent" size="20" ></td>
+    </tr>
+   
+    <tr>
+      <td>Insurance </td>
+      <td><input type="text" name="insurance" size="20"></td>
+    </tr>
+    <tr>
+      <td>Gross</td>
+      <td><input type="text" name="gross" size="20"></td>
+    </tr>
+    <tr>
+      <td>Tax</td>
+      <td><input type="text" name="tax" size="20"></td>
+    </tr>
+    <tr>
+      <td>Net</td>
+      <td><input type="text" name="net" size="20"></td>
+    </tr>
+    <tr>
+      <td><input type="button" value=" Compute " name="compute" onClick="doCalc()"></td>
+      <td><input type="reset" value=" Clear Form " name="reset"></td>
+    </tr>
+  </table>
+</form>
+
+
+
+
+</body>
+
+</html>

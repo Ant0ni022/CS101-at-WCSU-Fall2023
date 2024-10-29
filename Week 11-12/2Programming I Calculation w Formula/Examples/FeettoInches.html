@@ -1,0 +1,39 @@
+<html>
+
+<head>
+
+<title>New Page 1</title>
+
+<script language="JavaScript">
+
+function FtoI(form){
+	var F1 = form.F.value;
+        
+	
+	F1=eval(F1);
+               
+
+	var I1= F1 * 12;
+
+	form.I.value = I1;
+	
+}
+
+</script>
+
+</head>
+
+<body>
+<form name="myForm">
+Feet:
+<input type="text" name="F">
+
+
+<input type="button" name="go" value=" equals " onClick="FtoI(this.form)">
+Inches:
+<input type="text" name="I">
+</form>
+
+</body>
+
+</html>

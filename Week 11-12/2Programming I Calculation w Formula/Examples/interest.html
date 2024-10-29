@@ -1,0 +1,44 @@
+<html>
+
+<head>
+
+<title>New Page 1</title>
+
+<script language="JavaScript">
+
+function Interest(form){
+	var P1 = form.P.value;
+        var R1 = form.R.value;
+        var T1 = form.T.value;
+	if (isNaN(P1)) {
+		alert("P1 must be a number");
+	}
+	else {
+		P1=eval(P1);
+                R1=eval(R1);
+                T1=eval(T1)
+		var I1=P1 * R1 * T1;
+		form.I.value = I1;
+	}
+}
+
+</script>
+
+</head>
+
+<body>
+<form name="myForm">
+P:
+<input type="text" name="P">
+R:
+<input type="text" name="R">
+T:
+<input type="text" name="T">
+<input type="button" name="go" value=" interest " onClick="Interest(this.form)">
+I:
+<input type="text" name="I">
+</form>
+
+</body>
+
+</html>

@@ -1,0 +1,39 @@
+<html>
+
+<head>
+
+<title>New Page 1</title>
+
+<script language="JavaScript">
+
+function PtoO(form){
+	var P1 = form.P.value;
+        
+	
+	P1=eval(P1);
+               
+
+	var O1= P1 * 16;
+
+	form.O.value = O1;
+	
+}
+
+</script>
+
+</head>
+
+<body>
+<form name="myForm">
+Pounds:
+<input type="text" name="P">
+
+
+<input type="button" name="go" value=" equals " onClick="PtoO(this.form)">
+Ounces:
+<input type="text" name="O">
+</form>
+
+</body>
+
+</html>

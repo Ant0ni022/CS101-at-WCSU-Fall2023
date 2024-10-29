@@ -1,0 +1,38 @@
+<html>
+
+<head>
+
+<title>New Page 1</title>
+
+<script language="JavaScript">
+
+function FtoC(form){
+	       var F1 = form.F.value;
+	
+	
+
+		F1=eval(F1);
+          
+
+		var C1= (5/9)*(F1-32)
+
+		form.C.value = C1;
+	
+}
+
+</script>
+
+</head>
+
+<body>
+<form name="myForm">
+Fahrenheit:
+<input type="text" name="F">
+<input type="button" name="go" value=" equals " onClick="FtoC(this.form)">
+Centigrade:
+<input type="text" name="C">
+</form>
+
+</body>
+
+</html>

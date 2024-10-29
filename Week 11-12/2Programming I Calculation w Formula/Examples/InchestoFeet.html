@@ -1,0 +1,39 @@
+<html>
+
+<head>
+
+<title>New Page 1</title>
+
+<script language="JavaScript">
+
+function ItoF(form){
+	var I1 = form.I.value;
+        
+	
+	I1=eval(I1);
+               
+
+	var F1= I1 / 12;
+
+	form.F.value = F1;
+	
+}
+
+</script>
+
+</head>
+
+<body>
+<form name="myForm">
+Inches:
+<input type="text" name="I">
+
+
+<input type="button" name="go" value=" equals " onClick="ItoF(this.form)">
+Feet:
+<input type="text" name="F">
+</form>
+
+</body>
+
+</html>

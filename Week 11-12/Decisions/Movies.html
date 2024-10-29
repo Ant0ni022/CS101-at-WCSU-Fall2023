@@ -1,0 +1,101 @@
+<html>
+
+<head>
+
+<title>Decisions Example: Going to the movies!</title>
+
+<script language="JavaScript">
+
+function chkNum(num,label) {
+	var isanonnegativenumber = true;
+	
+	if (isNaN(num)) {                         //is not a number
+		isanonnegativenumber = false;    
+		alert(label + " must be a number");
+	} else {                                  //is a number
+		if (eval(num) < 0) {                   //is a number less than 0, a negative number
+			isanonnegativenumber = false;
+			alert(label + " must be non-negative");
+		}
+	}
+	
+	return response;	
+}
+
+function doIt(form) {
+	
+	var movie = form.movie.value;
+	var soda = form.soda.value;
+	var popcorn = form.popcorn.value;
+	var pocket = form.pocket.value;
+	var answer;
+	//check if values represent non negative numbers as strings
+	if (chkNum(movie,"Movie $") && 
+		chkNum(soda,"Soda $") &&
+		chkNum(popcorn,"Popcorn $") &&
+		chkNum(pocket,"Pocket $")) {
+                
+		//convert to numeric values
+		movie = eval(movie);
+		soda = eval(soda);
+		popcorn = eval(popcorn);
+		pocket = eval(pocket);
+	
+		if (pocket < movie) {
+			answer = "Stay Home!";
+		} else {
+			if (pocket < (movie + soda)) {
+				answer = "Movie";
+			} else {
+				if (pocket < (movie + soda + popcorn)) {
+					answer = "Movie and soda";
+				} else {
+					answer = "Movie, soda and popcorn";
+				}
+			}
+		}
+	}
+	
+	form.answer.value = answer;
+}
+
+</script>
+
+
+</head>
+
+<body>
+<h1>Going to the movies!</h1>
+
+<form name="myForm">
+<table>
+<tr>
+<td>Movie $</td>
+<td><input type="text" name="movie" size="20"></td>
+</tr>
+<tr>
+<td>Soda $</td>
+<td><input type="text" name="soda" size="20"></td>
+</tr>
+<tr>
+<td>Popcorn $</td>
+<td><input type="text" name="popcorn" size="20"></td>
+</tr>
+<tr>
+<td>Pocket $</td>
+<td><input type="text" name="pocket" size="20"></td>
+</tr>
+<tr>
+<td>Decision</td>
+<td><input type="text" name="answer" size="20"></td>
+</tr>
+<tr>
+<td><input type="button" value="Decide" name="decide" onClick="doIt(this.form)"></td>
+<td><input type="reset" value="Reset" name="reset"></td>
+</tr>
+</table>
+</form>
+
+</body>
+
+</html>

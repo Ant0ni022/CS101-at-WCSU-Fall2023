@@ -1,0 +1,26 @@
+<html>
+<head>
+<script language="JavaScript">
+ function AddNumbers() {
+   // Get data off form textboxes and into variables
+   var x = document.AddForm1.Value1.value; 
+   var y = document.AddForm1.Value2.value;
+   // Convert values from text format to numerical format
+   x = eval(x);  y = eval(y) 
+   // Calculation using formula for adding x and y 
+   ans = x + y;
+   // Put ans into text box on form
+   document.AddForm1.Answer.value = ans;
+}
+</script>
+</head>
+<body>
+<form name="AddForm1">
+Enter numbers to be added.
+   <input type="text" name="Value1" size="3"> +
+   <input type="text" name="Value2" size="3"> =
+   <input type="text" name="Answer" size="3">
+   <input type="button" onClick="AddNumbers()" value="Answer!">
+</form>
+</body>
+</html> 

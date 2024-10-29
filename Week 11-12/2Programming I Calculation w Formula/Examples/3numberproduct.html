@@ -1,0 +1,46 @@
+<html>
+
+<head>
+
+<title>New Page 1</title>
+
+<script language="JavaScript">
+
+function Product3(form){
+  //get three numbers off of the form in text format
+	var A1 = form.A.value;
+        var B1 = form.B.value;
+        var C1 = form.C.value;
+	
+	
+  //convert the numbers to a numerical format for calculating
+		A1=eval(A1);
+                B1=eval(B1);
+                C1=eval(C1);
+
+		var D1= A1 * B1 *C1;
+  //put result of calculation on form
+		form.D.value = D1;
+	
+}
+
+</script>
+
+</head>
+
+<body>
+<form name="myForm">
+A:
+<input type="text" name="A">
+B:
+<input type="text" name="B">
+C:
+<input type="text" name="C">
+<input type="button" name="go" value=" product " onClick="Product3(this.form)">
+D:
+<input type="text" name="D">
+</form>
+
+</body>
+
+</html>
